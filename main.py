@@ -10,8 +10,7 @@ url_consultar = "http://localhost:5001/consultarProcesso/"
 def path_consultar(processo):
     response = requests.get(url_consultar + processo)
 
-    if response.status_code == 200:
-        return "ok", 200
+    return response.content, response.status_code
 
 
 if __name__ == "__main__":
